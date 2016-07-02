@@ -1,0 +1,9 @@
+site_name: Django Usage
+site_url: https://github.com/regisec/django-usage/
+site_description: Django Usage - It can be simple
+
+repo_url: https://github.com/regisec/django-usage/
+
+markdown_extensions:
+ - toc:
+    anchorlink: True
