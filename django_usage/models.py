@@ -5,7 +5,6 @@
 from django.db import models
 from django.conf import settings
 
-
 class RequestRawData(models.Model):
     # request
     name = models.CharField(max_length=250)

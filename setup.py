@@ -10,7 +10,7 @@ here = path.abspath(path.dirname(__file__))
 
 setup(
         name='django-usage',
-        version='0.0.1a',
+        version='0.0.1a2',
         description='Django usage reports',
         url='https://github.com/regisec/django-usage/',
         author='Régis Eduardo Crestani',

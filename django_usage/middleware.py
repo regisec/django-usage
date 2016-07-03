@@ -12,6 +12,7 @@ from .settings import DJANGO_USAGE_SETTINGS as SETTINGS
 
 
 class DjangoUsageMiddleware(object):
+
     @staticmethod
     def _process(request, response):
         if hasattr(request, 'started_at'):
@@ -21,13 +22,13 @@ class DjangoUsageMiddleware(object):
             else:
                 name = request.path
             timedelta = timezone.now() - request.started_at
-            RequestRawData.objects.create(
+            RequestRawData.objects.db_manager(SETTINGS['DATABASE']).create(
                 name=name,
                 method=request.method,
                 latency=(timedelta.microseconds + timedelta.seconds * 1000000) / 1000,
                 size=len(response.content),
                 status=response.status_code,
-                user=request.user if request.user and request.user.is_authenticated else None
+                user=request.user if request.user and request.user.is_authenticated() else None
             )
 
     @staticmethod
