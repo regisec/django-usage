@@ -23,12 +23,12 @@ Then add `'django_usage'` in your `INSTALLED_APPS` settings
     )
 
 ## Settings:
-- PARALLEL_MODE:
--- 0: No parallel
--- 1: Thread
--- 2: Process
-
     DJANGO_USAGE_SETTINGS = {
         'PARALLEL_MODE': 1,
         'DATABASE': 'default'
     }
+
+### Parallel Modes:
+- 0: No parallel
+- 1: Thread
+- 2: Process
