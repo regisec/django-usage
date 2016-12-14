@@ -17,7 +17,7 @@ class DjangoUsageMiddleware(object):
     def _process(request, response):
         if hasattr(request, 'started_at'):
             # get name
-            if hasattr(request, 'resolver_match') and request.resolver_match is not None:
+            if hasattr(request, 'resolver_match') and request.resolver_match is not None and request.resolver_match.url_name is not None:
                 name = request.resolver_match.url_name
             else:
                 name = request.path
